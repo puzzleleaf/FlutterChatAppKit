@@ -7,7 +7,7 @@ Flutter Social App Kit (-ing)
 
 
 ### Speed Code (Youtube)
-[![Flutter Social App Kit](./readme/youtube.png)](https://youtu.be/RcenhheM3C0)
+[![Flutter Social App Kit](./readme/youtube.png)](https://youtu.be/YQ-sbSjiokk)
 
 
 ### Reference
