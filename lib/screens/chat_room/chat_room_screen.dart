@@ -4,6 +4,7 @@ import 'package:fluttersocial/models/data.dart';
 import 'package:fluttersocial/models/message_model.dart';
 import 'package:fluttersocial/screens/chat_room/chat_input.dart';
 import 'package:fluttersocial/screens/chat_room/chat_item.dart';
+import 'package:fluttersocial/screens/utils/constants.dart';
 
 class ChatRoomScreen extends StatefulWidget {
   @override
@@ -40,6 +41,7 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
                   style: TextStyle(
                     fontSize: 15.0,
                     fontWeight: FontWeight.bold,
+                    color: Colors.white
                   ),
                 ),
                 Text(
@@ -47,6 +49,7 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
                   style: TextStyle(
                     fontSize: 10.0,
                     fontWeight: FontWeight.normal,
+                    color: Colors.white
                   ),
                 ),
               ],
@@ -68,11 +71,9 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xff0D5F64),
-              Color(0xff219077),
-              Color(0xffA5CDCC),
-            ],
+            colors: Theme.of(context).brightness == Brightness.light
+                ? Constants.lightBGColors
+                : Constants.darkBGColors,
           ),
         ),
         child: Column(
@@ -80,7 +81,8 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
             Expanded(
               child: Container(
                 alignment: Alignment.topCenter,
-                padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 10),
+                padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 10),
                 child: SingleChildScrollView(
                   reverse: true,
                   child: Column(
@@ -93,9 +95,9 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
                               isContinue: index == 0
                                   ? false
                                   : (messages[index - 1].sender ==
-                                  messages[index].sender) &&
-                                  (messages[index - 1].time ==
-                                      messages[index].time)),
+                                          messages[index].sender) &&
+                                      (messages[index - 1].time ==
+                                          messages[index].time)),
                         )
                     ],
                   ),

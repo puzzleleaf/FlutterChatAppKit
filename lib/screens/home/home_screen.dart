@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.white,
+          backgroundColor: Theme.of(context).primaryColor,
           currentIndex: _page,
           onTap: (idx) {
             _pageController.jumpToPage(idx);
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               activeIcon: Icon(
                 Icons.message,
-                color: Colors.amber,
+                color: Theme.of(context).accentColor,
               ),
               title: Container(
                 height: 0.0,
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               activeIcon: Icon(
                 Icons.notifications,
-                color: Colors.amber,
+                color: Theme.of(context).accentColor,
               ),
               title: Container(
                 height: 0.0,
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               activeIcon: Icon(
                 Icons.account_circle,
-                color: Colors.amber,
+                color: Theme.of(context).accentColor,
               ),
               title: Container(
                 height: 0.0,

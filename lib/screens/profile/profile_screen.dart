@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttersocial/models/data.dart';
+import 'package:fluttersocial/screens/utils/constants.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -12,24 +13,20 @@ class ProfileScreen extends StatelessWidget {
         centerTitle: false,
         title: Text(
           'Profile',
-          style: TextStyle(
-            fontSize: 25.0,
-            letterSpacing: 1.5,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Constants.titleStyle,
         ),
       ),
       body: Container(
         padding: const EdgeInsets.only(top: 90),
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-              Color(0xff0D5F64),
-              Color(0xff219077),
-              Color(0xffA5CDCC)
-            ])),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: Theme.of(context).brightness == Brightness.light
+                ? Constants.lightBGColors
+                : Constants.darkBGColors,
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -77,39 +74,62 @@ class ProfileScreen extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 40,),
+              SizedBox(
+                height: 40,
+              ),
               Column(
                 children: <Widget>[
                   Row(
                     children: <Widget>[
-                      Icon(Icons.account_box, color: Colors.white,),
-                      SizedBox(width: 15,),
-                      Text('Account', style: TextStyle(
+                      Icon(
+                        Icons.account_box,
                         color: Colors.white,
-                        fontSize: 16
-                      ),)
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        'Account',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )
                     ],
                   ),
-                  Divider(color: Colors.white, height: 40,),
+                  Divider(
+                    color: Colors.white,
+                    height: 40,
+                  ),
                   Row(
                     children: <Widget>[
-                      Icon(Icons.chat, color: Colors.white,),
-                      SizedBox(width: 15,),
-                      Text('Chat', style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16
-                      ),)
+                      Icon(
+                        Icons.chat,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        'Chat',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )
                     ],
                   ),
-                  Divider(color: Colors.white, height: 40,),
+                  Divider(
+                    color: Colors.white,
+                    height: 40,
+                  ),
                   Row(
                     children: <Widget>[
-                      Icon(Icons.notifications, color: Colors.white,),
-                      SizedBox(width: 15,),
-                      Text('Notification', style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16
-                      ),)
+                      Icon(
+                        Icons.notifications,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Text(
+                        'Notification',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      )
                     ],
                   ),
                 ],

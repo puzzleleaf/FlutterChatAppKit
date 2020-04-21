@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttersocial/models/data.dart';
 import 'package:fluttersocial/screens/notification/feed_bubble.dart';
+import 'package:fluttersocial/screens/utils/constants.dart';
 
 class NotificationScreen extends StatelessWidget {
   @override
@@ -13,24 +14,20 @@ class NotificationScreen extends StatelessWidget {
         centerTitle: false,
         title: Text(
           'Notification',
-          style: TextStyle(
-            fontSize: 25.0,
-            letterSpacing: 1.5,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Constants.titleStyle,
         ),
       ),
       body: Container(
           padding: const EdgeInsets.only(top: 90, left: 5, right: 5),
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                Color(0xff0D5F64),
-                Color(0xff219077),
-                Color(0xffA5CDCC)
-              ])),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: Theme.of(context).brightness == Brightness.light
+                  ? Constants.lightBGColors
+                  : Constants.darkBGColors,
+            ),
+          ),
           child: Column(
             children: <Widget>[
               Expanded(
@@ -44,9 +41,12 @@ class NotificationScreen extends StatelessWidget {
                         children: <Widget>[
                           CircleAvatar(
                             radius: 20.0,
-                            backgroundImage: NetworkImage(Data.feeds[index].sender.imageUrl),
+                            backgroundImage:
+                                NetworkImage(Data.feeds[index].sender.imageUrl),
                           ),
-                          FeedBubble(feed: Data.feeds[index],)
+                          FeedBubble(
+                            feed: Data.feeds[index],
+                          )
                         ],
                       ),
                     );
