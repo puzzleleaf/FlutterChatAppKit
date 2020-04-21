@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttersocial/screens/utils/constants.dart';
+import 'package:fluttersocial/utils/constants.dart';
 
 class ChatInput extends StatefulWidget {
   final Function onPressed;

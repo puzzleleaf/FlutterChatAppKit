@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttersocial/models/data.dart';
 import 'package:fluttersocial/screens/notification/feed_bubble.dart';
-import 'package:fluttersocial/screens/utils/constants.dart';
+import 'package:fluttersocial/utils/constants.dart';
 
 class NotificationScreen extends StatelessWidget {
   @override

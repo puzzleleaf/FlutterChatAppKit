@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttersocial/models/data.dart';
-import 'package:fluttersocial/screens/utils/constants.dart';
+import 'package:fluttersocial/utils/constants.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttersocial/models/data.dart';
 import 'package:fluttersocial/screens/chat/chat_room_list_item.dart';
-import 'package:fluttersocial/screens/utils/constants.dart';
+import 'package:fluttersocial/utils/constants.dart';
 
 class ChatScreen extends StatelessWidget {
   @override

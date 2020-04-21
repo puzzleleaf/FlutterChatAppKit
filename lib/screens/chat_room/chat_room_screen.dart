@@ -4,7 +4,7 @@ import 'package:fluttersocial/models/data.dart';
 import 'package:fluttersocial/models/message_model.dart';
 import 'package:fluttersocial/screens/chat_room/chat_input.dart';
 import 'package:fluttersocial/screens/chat_room/chat_item.dart';
-import 'package:fluttersocial/screens/utils/constants.dart';
+import 'package:fluttersocial/utils/constants.dart';
 
 class ChatRoomScreen extends StatefulWidget {
   @override
