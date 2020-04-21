@@ -22,7 +22,12 @@ class FeedBubble extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(feed.message),
+            Text(
+              feed.message,
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 8.0),
               height: 150,
@@ -52,7 +57,9 @@ class FeedBubble extends StatelessWidget {
                   color: Colors.grey,
                   size: 15,
                 ),
-                SizedBox(width: 5,),
+                SizedBox(
+                  width: 5,
+                ),
                 Text(
                   '${feed.shareCount}',
                   style: TextStyle(
@@ -60,13 +67,17 @@ class FeedBubble extends StatelessWidget {
                     fontSize: 12.0,
                   ),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10,
+                ),
                 Icon(
                   Icons.thumb_up,
                   color: Colors.grey,
                   size: 15,
                 ),
-                SizedBox(width: 5,),
+                SizedBox(
+                  width: 5,
+                ),
                 Text(
                   '${feed.likeCount}',
                   style: TextStyle(

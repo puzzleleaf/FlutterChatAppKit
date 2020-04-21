@@ -3,6 +3,7 @@ import 'package:fluttersocial/screens/utils/constants.dart';
 
 class ChatInput extends StatefulWidget {
   final Function onPressed;
+
   ChatInput({this.onPressed});
 
   @override
@@ -18,7 +19,7 @@ class _ChatInputState extends State<ChatInput> {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
@@ -36,7 +37,7 @@ class _ChatInputState extends State<ChatInput> {
           Container(
             child: IconButton(
               icon: Icon(Icons.insert_emoticon),
-              color: Colors.amber,
+              color: Theme.of(context).accentColor,
               onPressed: () {},
             ),
           ),
@@ -46,14 +47,13 @@ class _ChatInputState extends State<ChatInput> {
               keyboardType: TextInputType.multiline,
               autofocus: false,
               decoration: InputDecoration(
-                focusColor: Colors.white,
                 hintText: 'Please enter the message',
                 hintStyle: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
                 ),
                 filled: true,
-                fillColor: Colors.grey[200],
+                fillColor: Theme.of(context).backgroundColor,
                 enabledBorder: Constants.border,
                 disabledBorder: Constants.border,
                 border: Constants.border,
@@ -79,7 +79,7 @@ class _ChatInputState extends State<ChatInput> {
                 Icons.send,
                 color: Colors.white,
               ),
-              fillColor: Colors.amber,
+              fillColor: Theme.of(context).accentColor,
               shape: CircleBorder(),
               elevation: 0.0,
             ),

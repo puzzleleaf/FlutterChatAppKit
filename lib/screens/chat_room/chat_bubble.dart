@@ -19,39 +19,46 @@ class ChatBubble extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
-            color: isMe ? Colors.amber : Colors.white,
+            color: isMe
+                ? Theme.of(context).accentColor
+                : Theme.of(context).primaryColor,
             borderRadius: isMe
                 ? isContinue
-                ? BorderRadius.only(
-              topRight: Radius.circular(20.0),
-              topLeft: Radius.circular(20.0),
-              bottomLeft: Radius.circular(20.0),
-              bottomRight: Radius.circular(20.0),
-            )
-                : BorderRadius.only(
-              topRight: Radius.circular(20.0),
-              topLeft: Radius.circular(20.0),
-              bottomLeft: Radius.circular(20.0),
-            )
+                    ? BorderRadius.only(
+                        topRight: Radius.circular(20.0),
+                        topLeft: Radius.circular(20.0),
+                        bottomLeft: Radius.circular(20.0),
+                        bottomRight: Radius.circular(20.0),
+                      )
+                    : BorderRadius.only(
+                        topRight: Radius.circular(20.0),
+                        topLeft: Radius.circular(20.0),
+                        bottomLeft: Radius.circular(20.0),
+                      )
                 : isContinue
-                ? BorderRadius.only(
-              topRight: Radius.circular(20.0),
-              topLeft: Radius.circular(20.0),
-              bottomLeft: Radius.circular(20.0),
-              bottomRight: Radius.circular(20.0),
-            )
-                : BorderRadius.only(
-              topRight: Radius.circular(20.0),
-              topLeft: Radius.circular(20.0),
-              bottomRight: Radius.circular(20.0),
-            ),
+                    ? BorderRadius.only(
+                        topRight: Radius.circular(20.0),
+                        topLeft: Radius.circular(20.0),
+                        bottomLeft: Radius.circular(20.0),
+                        bottomRight: Radius.circular(20.0),
+                      )
+                    : BorderRadius.only(
+                        topRight: Radius.circular(20.0),
+                        topLeft: Radius.circular(20.0),
+                        bottomRight: Radius.circular(20.0),
+                      ),
           ),
           constraints: BoxConstraints(
-              maxWidth: MediaQuery.of(context).size.width * 0.65, minHeight: 30),
+              maxWidth: MediaQuery.of(context).size.width * 0.65,
+              minHeight: 30),
           child: Text(
             message.text,
             style: TextStyle(
-              color: isMe ? Colors.white : Colors.black,
+              color: isMe
+                  ? Colors.white
+                  : Theme.of(context).brightness == Brightness.light
+                      ? Colors.black
+                      : Colors.grey,
             ),
           ),
         ),
@@ -64,7 +71,7 @@ class ChatBubble extends StatelessWidget {
     return Column(
       mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
       crossAxisAlignment:
-      isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+          isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
       children: <Widget>[
         Text(
           message.unread ? '1' : '',
